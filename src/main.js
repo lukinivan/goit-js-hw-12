@@ -19,7 +19,7 @@ requestForm.addEventListener('submit', e => {
 
   const query = e.currentTarget.elements.query.value.trim();
   galleryCont.innerHTML = '';
-  imageLoader.classList.add('loader');
+  imageLoader.classList.remove('hide-loader');
 
   getPhotos(query)
     .then(data => {
@@ -28,11 +28,11 @@ requestForm.addEventListener('submit', e => {
         : (galleryCont.innerHTML = imagesTemplate(data.hits));
 
       lightBox.refresh();
-      imageLoader.classList.remove('loader');
+      imageLoader.classList.add('hide-loader');
     })
     .catch(error => {
       responseError(error.message);
-      imageLoader.classList.remove('loader');
+      imageLoader.classList.add('hide-loader');
     });
 
   e.currentTarget.reset();
