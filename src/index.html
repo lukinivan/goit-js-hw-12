@@ -17,11 +17,18 @@
         name="query"
         placeholder="Search images... "
       />
-      <button class="request-btn" type="submit">Search</button>
+      <button class="request-btn btn" type="submit">Search</button>
     </form>
 
     <div class="gallery js-gallery"></div>
 
-    <span class="loader js-loader hide-loader"></span>
+    <!-- <span class="loader js-loader hide"></span> -->
+
+    <div class="loader-wrap">
+      <span class="loader js-loader hide"></span>
+      <button class="loade-more js-load-more btn hide" type="input">
+        Load More
+      </button>
+    </div>
   </body>
 </html>

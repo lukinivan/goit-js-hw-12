@@ -1,7 +1,47 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0 auto;
+  max-width: 1440px;
   padding: 10px;
+}
+
+.btn {
+  border-radius: 8px;
+  border: none;
+  padding: 8px 16px;
+
+  background-color: #4e75ff;
+  color: #fff;
+
+  transition: 250ms ease-in;
+}
+
+.btn:hover {
+  background-color: #6c8cff;
 }
 
 /* #region request Field */
@@ -26,24 +66,14 @@ body {
 .request-field:focus {
   outline: none;
   border-color: #6c8cff;
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .request-btn {
-  border-radius: 8px;
-  border: none;
-  padding: 8px 16px;
   width: 90px;
   height: 40px;
-
-  background-color: #4e75ff;
-  color: #fff;
-
-  transition: 250ms ease-in;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #6c8cff;
 }
 
 /* #endregion*/
@@ -55,6 +85,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
+  margin-bottom: 32px;
 }
 
 .image-container {
@@ -63,10 +94,12 @@ button:hover {
   align-items: center;
 
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
 
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.08),
     0px 1px 3px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
 }
 
 img {
@@ -104,6 +137,13 @@ img {
 /* #endregion */
 
 /* #region Loader */
+.loader-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
 
 .loader {
   width: 12px;
@@ -132,7 +172,13 @@ img {
   }
 }
 
-.hide-loader {
+/* #endregion */
+
+.hide {
   display: none;
 }
-/* #endregion */
+
+.loade-more {
+  height: 40px;
+  margin-top: 32px;
+}
